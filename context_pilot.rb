@@ -8,8 +8,7 @@ class ContextPilot < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "build", "--release"
-    system "cp", "target/release/context_pilot", "#{bin}/context_pilot"
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
